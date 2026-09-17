@@ -1,0 +1,451 @@
+/* 
+  Smriti Setu (স্মৃতি সেতু) — Elderly Cognitive Support Site
+  Age-Friendly Human Factors Design System
+  Canvas: Warm Cream/Linen (#FDFBF7)
+  Typography: Deep Charcoal High Contrast (#0F172A)
+  Warm Amber Accents: #D97706
+  Soft Sage Green Affirmations: #059669
+*/
+
+:root {
+  --canvas-bg: #FDFBF7;
+  --card-bg: #FFFFFF;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --accent-amber: #D97706;
+  --accent-amber-hover: #B45309;
+  --accent-amber-light: #FEF3C7;
+  --affirm-green: #059669;
+  --affirm-green-hover: #047857;
+  --affirm-green-light: #D1FAE5;
+  --border-subtle: #E7E0D6;
+  --border-focus: #D97706;
+  --shadow-soft: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 18px 40px -10px rgba(15, 23, 42, 0.09);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 24px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+/* Age-Friendly Button Standards (Min height 72px, 1.5rem 2.5rem padding, rounded 20px) */
+.btn-large {
+  min-height: 72px;
+  padding: 1.25rem 2.5rem;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 3px solid transparent;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.btn-large:focus-visible {
+  outline: 4px solid var(--border-focus);
+  outline-offset: 4px;
+}
+
+.btn-large:active {
+  transform: scale(0.98);
+}
+
+.btn-amber {
+  background-color: var(--accent-amber);
+  color: #FFFFFF;
+}
+
+.btn-amber:hover {
+  background-color: var(--accent-amber-hover);
+}
+
+.btn-sage {
+  background-color: var(--affirm-green);
+  color: #FFFFFF;
+}
+
+.btn-sage:hover {
+  background-color: var(--affirm-green-hover);
+}
+
+.btn-outline {
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  border: 3px solid var(--border-subtle);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-amber);
+  background-color: var(--accent-amber-light);
+}
+
+/* Single Focus Massive Cards */
+.focus-card {
+  background: var(--card-bg);
+  border: 3px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Interactive Option Choice Cards */
+.choice-card {
+  min-height: 80px;
+  background: #FFFFFF;
+  border: 3px solid var(--border-subtle);
+  border-radius: 22px;
+  padding: 1.5rem 2rem;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+  width: 100%;
+}
+
+.choice-card:hover {
+  border-color: var(--accent-amber);
+  background-color: #FFFDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.12);
+}
+
+.choice-card.selected-affirm {
+  border-color: var(--affirm-green);
+  background-color: var(--affirm-green-light);
+  color: #065F46;
+}
+
+/* Speaker / Read Aloud Button */
+.speaker-btn {
+  background: var(--accent-amber-light);
+  color: var(--accent-amber-hover);
+  border: 2px solid #FCD34D;
+  border-radius: 16px;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.speaker-btn:hover {
+  background: #FDE68A;
+  transform: scale(1.02);
+}
+
+/* Calming Breathing Animation for Xanti Baani */
+@keyframes calmBreathe {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.22); opacity: 1; filter: drop-shadow(0 0 25px rgba(5, 150, 105, 0.35)); }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+.breathing-circle {
+  animation: calmBreathe 6s ease-in-out infinite;
+}
+
+/* Top corner Discrete Caregiver Fallback Button */
+.corner-caregiver-btn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 2px solid #E2E8F0;
+  color: #64748B;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.corner-caregiver-btn:hover {
+  background: #FFFFFF;
+  color: #0F172A;
+  border-color: #94A3B8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   Family Memory Lane (Authoritative Pipeline Styles)
+   ========================================================= */
+.memory-lane-container {
+  background: var(--card-bg);
+  border: 3px solid var(--border-subtle);
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-subtle);
+  padding-bottom: 1rem;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.memory-photo-wrapper {
+  width: 100%;
+  max-height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 4px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.memory-photo {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.question-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: #FAF7F2;
+  border: 2px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 1.25rem 1.75rem;
+}
+
+.question-box h2 {
+  font-size: 28px;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.audio-btn {
+  background: var(--accent-amber-light);
+  color: var(--accent-amber-hover);
+  border: 2px solid #FCD34D;
+  border-radius: 16px;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.audio-btn:hover {
+  background: #FDE68A;
+  transform: scale(1.05);
+}
+
+.audio-btn:active {
+  transform: scale(0.96);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.option-btn {
+  min-height: 76px;
+  background: #FFFFFF;
+  border: 3px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 1.25rem 2rem;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.04);
+  text-align: left;
+}
+
+.option-btn:hover {
+  border-color: var(--accent-amber);
+  background-color: #FFFDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.12);
+}
+
+.option-btn.correct {
+  border-color: var(--affirm-green);
+  background-color: var(--affirm-green-light);
+  color: #065F46;
+}
+
+.option-btn.incorrect {
+  border-color: #F59E0B;
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.clue-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.clue-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--accent-amber);
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: underline;
+  align-self: flex-start;
+  padding: 6px 0;
+}
+
+.clue-toggle-btn:hover {
+  color: var(--accent-amber-hover);
+}
+
+.clue-card {
+  background: #FEF3C7;
+  border: 2px solid #FCD34D;
+  border-radius: 20px;
+  padding: 1.5rem;
+  font-size: 24px;
+  color: #92400E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  min-height: 72px;
+  padding: 1.25rem 2.5rem;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: var(--affirm-green);
+  color: #FFFFFF;
+  border: 3px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--affirm-green-hover);
+  transform: translateY(-2px);
+}
+
+.btn-story {
+  min-height: 72px;
+  padding: 1.25rem 2rem;
+  border-radius: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  background-color: var(--accent-amber-light);
+  color: var(--accent-amber-hover);
+  border: 2px solid #FCD34D;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-story:hover {
+  background-color: #FDE68A;
+  transform: translateY(-2px);
+}
+

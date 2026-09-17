@@ -1,0 +1,17 @@
+{
+  "name": "smriti-setu",
+  "version": "1.0.0",
+  "description": "Smriti Setu (স্মৃতি সেতু) — Cognitive Engagement & Memory Assistance Platform for Elderly with North Eastern Cultural Sensitivity",
+  "scripts": {
+    "dev": "concurrently -k -p \"[{name}]\" -n \"BACKEND,AI_PROXY,CAREGIVER,ELDERLY\" -c \"blue,magenta,cyan,yellow\" \"npm run dev:backend\" \"npm run dev:ai\" \"npm run dev:caregiver\" \"npm run dev:elderly\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:ai": "cd ai_proxy && python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload",
+    "dev:caregiver": "cd caregiver_app && npm run dev",
+    "dev:elderly": "cd elderly_site && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../caregiver_app && npm install && cd ../elderly_site && npm install",
+    "seed": "cd backend && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
